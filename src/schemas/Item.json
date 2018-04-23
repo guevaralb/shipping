@@ -1,0 +1,42 @@
+{
+  "id": {
+    "type": "",
+    "label": "Codigo",
+    "name": "codigo"
+  },
+
+  "descripcion": {
+    "type": "",
+    "label": "Descripcion",
+    "name": "descripcion"
+  },
+
+  "unidadmenor": {
+    "type": "",
+    "label": "Unidad Menor",
+    "name": "unidad_menor"
+  },
+
+  "iva": {
+    "type": "",
+    "label": "IVA",
+    "name": "iva"
+  },
+  "precioSinIva": {
+    "type": "",
+    "label": "Precio Sin Iva",
+    "name": "precioSinIva"
+  },
+
+  "precioConIva": {
+    "type": "",
+    "label": "Precio Con Iva",
+    "name": "precioConIva"
+  },
+  
+  "unidadmayor": {
+    "type": "",
+    "label": "Unidad Mayor",
+    "name": "unidadmayor"
+  }
+}

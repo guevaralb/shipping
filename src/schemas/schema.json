@@ -1,0 +1,42 @@
+{
+  "id": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+
+  "descripcion": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+
+  "unidadmenor": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+
+  "iva": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+  "precioSinIva": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+
+  "precioConIva": {
+    "type": "",
+    "label": "",
+    "name": ""
+  },
+  
+  "unidadmayor": {
+    "type": "",
+    "label": "",
+    "name": ""
+  }
+}

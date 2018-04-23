@@ -1,0 +1,17 @@
+{
+  "id": {
+    "type": "",
+    "label": "Codigo",
+    "name": "codigo"
+  },
+  "items": {
+    "type": "array",
+    "label": "Items",
+    "name": "Items"
+  },
+  "fecha_envio": {
+    "type": "array",
+    "label": "Items",
+    "name": "Items"
+  }
+}

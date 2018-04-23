@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+* {
+  font-family: 'Roboto', sans-serif; }
+
+.ListContainer {
+  margin: auto;
+  margin-top: 2%;
+  width: 100%;
+  border: .5px solid lightgray;
+  -webkit-box-shadow: 0 0 8px 0 lightgray;
+  box-shadow: 0 0 8px 0 lightgray; }
+
+.HeaderList {
+  border-bottom: .5px solid lightgray;
+  list-style: none;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  color: white;
+  background: #222222; }
+
+.Aux {
+  margin: auto;
+  margin-top: 2%;
+  width: 50%; }
+
+.headerListItem {
+  padding: 10px 0 10px 0;
+  text-align: center;
+  line-height: 10px; }
+
+.BodyList {
+  border-bottom: .5px solid lightgray;
+  list-style: none;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px; }
