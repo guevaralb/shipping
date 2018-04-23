@@ -9,6 +9,9 @@ import configureStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 // App component
 import App from './App';
+import './styles/App.css'
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const store = configureStore();
 // Load item list from API as soon as application initiates
@@ -16,7 +19,9 @@ store.dispatch(getItems());
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <MuiThemeProvider>
+            <App />
+        </MuiThemeProvider>
     </Provider>,
     document.getElementById('root')
 );

@@ -1,0 +1,21 @@
+.Delete {
+    color: tomato;
+}
+.Edit {
+    color: steelblue;
+}
+
+.Delete, .Edit {
+    max-width: 30px;
+    max-height: 30px;
+    width: 30px;
+    height: 30px;
+    transition: ease-in-out .15s;
+}
+.Delete:hover, .Edit:hover {
+    transform: scale(1.2);
+}
+.Delete:hover {
+    cursor: pointer;
+}
+

@@ -2,6 +2,28 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 // Child components
 import Pagination from '../Pagination';
+import './microstyles.css'
+
+//Material UI
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn,
+} from 'material-ui/Table';
+
+//React Icons
+import TiEdit from 'react-icons/lib/ti/edit'
+import TiDelete from 'react-icons/lib/ti/delete'
+
+const styles = {
+    display: "flex",
+    "justify-content": "space-around",
+    "margin-top": "10px"
+}
+
 
 const ItemList = ({items, pk, onDeleteItem, pages, currentPage}) => {
     return (
@@ -10,64 +32,38 @@ const ItemList = ({items, pk, onDeleteItem, pages, currentPage}) => {
             :
             <div className="item-list">
                 <div className="responsive-table">
-                    <table className="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            {Object.keys(items.pop()).map(x =>
-                                <th>{x}</th>
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                {Object.keys(items.pop()).map(x =>
+                                    <TableHeaderColumn>{x}</TableHeaderColumn>
+                                )}
+                                <TableHeaderColumn /><TableHeaderColumn />
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {items.map(item =>
+                                <TableRow key={item[pk]}>
+                                    {Object.values(item).map(k=><TableRowColumn>{k}</TableRowColumn>)}
+                                    <TableRowColumn>
+                                        <NavLink to={'/bids/' + item[pk]}>View Bids</NavLink>
+                                    </TableRowColumn>
+                                    <div style={styles}>
+                                        <div>
+                                            <NavLink
+                                                     to={'/edit/' + item[pk]}><TiEdit className={'Edit'}/></NavLink>
+                                        </div>
+                                        <div>
+                                            <TiDelete
+                                                    className={'Delete'}
+                                                    onClick={() => onDeleteItem(item[pk])}
+                                            />
+                                        </div>
+                                    </div>
+                                </TableRow>
                             )}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {items.map(item =>
-                            <tr key={item[pk]}>
-                                {Object.values(item).map(k=><td>{k}</td>)}
-                                <td>
-                                    <NavLink to={'/bids/' + item[pk]}>View Bids</NavLink>
-                                </td>
-                                <td>
-                                    <NavLink className="btn btn-primary btn-sm"
-                                             to={'/edit/' + item[pk]}>Edit</NavLink>
-                                </td>
-                                <td>
-                                    <button className="btn btn-sm btn-danger"
-                                            onClick={() => onDeleteItem(item[pk])}>
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        )}
-                        {/*<tr key={item.id}>
-                                <td>{item.id}</td>
-                                <td>{item.firstname}</td>
-                                <td>{item.lastname}</td>
-                                <td><img className="avatar" src={item.avatarUrl} alt="Item Avatar"/></td>
-                                <td>{item.email}</td>
-                                <td>{item.phone}</td>
-                                <td className="premium">
-                                    {
-                                        item.hasPremium ?
-                                            <span className="glyphicon glyphicon-ok"></span>
-                                            :
-                                            <span className="glyphicon glyphicon-remove"></span>
-                                    }
-                                </td>
-                                <td>
-                                    <NavLink to={'/bids/' + item.id}>View Bids</NavLink>
-                                </td>
-                                <td>
-                                    <NavLink className="btn btn-primary btn-sm"
-                                             to={'/edit/' + item.id}>Edit</NavLink>
-                                </td>
-                                <td>
-                                    <button className="btn btn-sm btn-danger"
-                                            onClick={() => onDeleteItem(item.id)}>
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>*/}
-                        </tbody>
-                    </table>
+                        </TableBody>
+                    </Table>
                 </div>
                 {/* show pagination if there are more than 1 page */
                     pages > 1 && <Pagination pages={pages} currentPage={currentPage}/>

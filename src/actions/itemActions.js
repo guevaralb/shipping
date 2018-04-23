@@ -24,7 +24,7 @@ export function ajaxLoading(status) {
 export function getItems() {
     return dispatch => {
         dispatch(ajaxLoading(true));
-        axios.get('http://127.0.0.1:3002/productos')
+        axios.get('http://127.0.0.1:3001/productos')
             .then(response => {
                 dispatch(setItems(response.data));
                 dispatch(ajaxLoading(false));

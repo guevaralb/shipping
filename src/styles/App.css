@@ -108,3 +108,18 @@ img.avatar {
 .bids .btn {
     margin-bottom: 1.5em;
 }
+
+/*Icons  ==============================*/
+.Add, .List {
+    max-width: 35px;
+    max-height: 35px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    transition: ease-in-out .2s;
+}
+.Add:hover, .List:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    color: gold;
+}

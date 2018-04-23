@@ -12,6 +12,11 @@ import './styles/App.css';
 
 import packetPage from "./containers/packet/PacketPage";
 
+//React Icons
+import './styles/App.css'
+import MdAddCircleOutline from 'react-icons/lib/md/add-circle-outline'
+import MdList from 'react-icons/lib/md/list'
+
 const App = () => {
     return (
         <Router>
@@ -20,8 +25,8 @@ const App = () => {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <nav className="main-nav">
                         <ul>
-                            <li><NavLink activeClassName="selected" to="/items/1">Item list</NavLink></li>
-                            <li><NavLink activeClassName="selected" to="/add">Add item</NavLink></li>
+                            <li><NavLink to="/items/1"></NavLink><MdList className={'List'}/></li>
+                            <li><NavLink activeClassName="selected" to="/add"><MdAddCircleOutline className={'Add'}/></NavLink></li>
                         </ul>
                     </nav>
                 </div>
